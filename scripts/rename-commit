@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+touch important.txt
+git add .
+git commit -am 'Iprompant message'

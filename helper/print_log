@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+hash=$(git log --pretty=oneline --reverse --grep='RESET-MARKER' | cut -f1 -d" " | head -1)
+git log --pretty=oneline --abbrev-commit $hash..

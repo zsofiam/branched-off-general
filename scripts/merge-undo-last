@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+branch_name="undo-last-feature"
+file_name="feature.js"
+
+git branch -D "$branch_name"
+git checkout -b "$branch_name"
+touch "$file_name"
+echo "function newFeature() {}" > "$file_name"
+git add .
+git commit -am "New feature works"
+git checkout -
+touch "$file_name"
+echo 'console.log("alma")' > "$file_name"
+git add .
+git commit -am 'Debugging'

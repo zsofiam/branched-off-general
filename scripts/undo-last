@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+touch work-in-progress.py
+git add work-in-progress.py
+
+git commit -am 'WIP basic feature implementation'

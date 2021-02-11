@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+touch just-works-tm.js
+git add .
+git commit -am 'Feature works!!!'
+
+echo 'function omg_letstrythis() { break; }' > just-works-tm.js
+git add .
+git commit -am 'Finish something important before demo!!!'

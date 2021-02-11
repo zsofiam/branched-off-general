@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+branch_name="simple-feature"
+file_name="feature.js"
+
+git branch -D "$branch_name"
+git checkout -b "$branch_name"
+touch "$file_name"
+git add .
+git commit -am "New feature works"
+git checkout -

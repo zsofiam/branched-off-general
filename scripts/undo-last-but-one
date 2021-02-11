@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+touch old-feature.js
+echo 'console.log("alma")' > old-feature.js
+git add .
+git commit -am 'Debugging'
+
+touch work-in-progress.py
+git add work-in-progress.py
+touch work-in-progress.py
+git add work-in-progress.py
+git commit -am 'WIP some progress with security'

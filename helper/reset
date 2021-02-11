@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+hash=$(git log --pretty=oneline --reverse --grep='^RESET-MARKER$' | cut -f1 -d" " | head -1)
+
+git stash -u
+
+# Go back to previous branch if in detached head state
+git symbolic-ref --short -q HEAD 2>&1 >/dev/null || git checkout -
+git reset --hard "$hash"
+git push --force
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+script_name="./scripts/$branch_name"
+[[ -f "$script_name" ]] && "./scripts/$branch_name"
